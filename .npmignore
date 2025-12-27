@@ -1,0 +1,34 @@
+# Source files
+src/
+*.ts
+*.tsx
+!*.d.ts
+
+# Config files
+tsconfig.json
+biome.json
+tsup.config.ts
+.gitignore
+.npmignore
+
+# Development
+.vscode/
+.idea/
+node_modules/
+.pnpm-store/
+
+# Testing
+coverage/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Documentation
+*.md
+!README.md
+
+# Temporary
+tmp/
+temp/
+*.log

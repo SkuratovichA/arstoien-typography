@@ -1,0 +1,192 @@
+.typography-container {
+  --typography-primary: #555555;
+  --typography-secondary: #6c757d;
+  --typography-accent: #28a745;
+  --typography-text: #212529;
+  --typography-background: #ffffff;
+  --typography-highlight: #fff3cd;
+  --typography-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --typography-font-heading: inherit;
+  --typography-font-code: 'Monaco', 'Courier New', monospace;
+
+  font-family: var(--typography-font-body);
+  color: var(--typography-text);
+  background-color: var(--typography-background);
+  padding: 1rem;
+  min-height: 100px;
+  position: relative;
+}
+
+.typography-block {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  position: relative;
+  min-height: 1.5em;
+  line-height: 1.6;
+  word-wrap: break-word;
+  outline: none;
+}
+
+.typography-block:last-child {
+  margin-bottom: 0;
+}
+
+.typography-block--selected {
+  background-color: rgba(0, 102, 204, 0.05);
+  box-shadow: -3px 0 0 0 var(--typography-primary);
+}
+
+.typography-block--editing {
+  background-color: rgba(0, 102, 204, 0.08);
+  cursor: text;
+}
+
+.typography-editable .typography-block:hover:not(.typography-block--editing) {
+  background-color: rgba(0, 0, 0, 0.02);
+  cursor: text;
+}
+
+/* Block Types */
+.typography-block--heading {
+  font-family: var(--typography-font-heading);
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+h1.typography-block--heading {
+  font-size: 2em;
+}
+
+h2.typography-block--heading {
+  font-size: 1.5em;
+}
+
+h3.typography-block--heading {
+  font-size: 1.25em;
+}
+
+h4.typography-block--heading {
+  font-size: 1.1em;
+}
+
+h5.typography-block--heading {
+  font-size: 1em;
+}
+
+h6.typography-block--heading {
+  font-size: 0.9em;
+}
+
+.typography-block--code,
+pre.typography-block {
+  font-family: var(--typography-font-code);
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  overflow-x: auto;
+}
+
+.typography-block--code code {
+  font-family: inherit;
+  background: transparent;
+  padding: 0;
+  border: none;
+  display: block;
+  white-space: pre;
+}
+
+blockquote.typography-block--quote {
+  border-left: 4px solid var(--typography-secondary);
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+  color: #6c757d;
+}
+
+hr.typography-block--divider {
+  border: none;
+  border-top: 2px solid #e1e4e8;
+  margin: 1.5rem 0;
+}
+
+/* List Styles */
+.typography-block--list {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.typography-list-item {
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.typography-checkbox {
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+
+.typography-list-item--checked span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Inline Styles */
+.typography-block--bold {
+  font-weight: 700;
+}
+
+.typography-block--italic {
+  font-style: italic;
+}
+
+.typography-block--underline {
+  text-decoration: underline;
+}
+
+.typography-block--strikethrough {
+  text-decoration: line-through;
+}
+
+.typography-block--highlight {
+  background-color: var(--typography-highlight);
+  padding: 0 2px;
+}
+
+/* Placeholder */
+.typography-block[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* Focus styles */
+.typography-block:focus {
+  outline: 2px solid var(--typography-primary);
+  outline-offset: 2px;
+}
+
+/* Read-only styles */
+.typography-readonly .typography-block {
+  cursor: default;
+}
+
+.typography-readonly .typography-block:hover {
+  background-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .typography-container {
+    padding: 0.75rem;
+  }
+
+  .typography-block {
+    padding: 0.125rem 0.25rem;
+  }
+}
